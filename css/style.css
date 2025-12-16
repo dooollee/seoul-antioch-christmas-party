@@ -1,8 +1,9 @@
 @import "./font.css";
 
 :root {
-  --primary-color: #dfd3c3;
+  --primary-color: #FFF6E9;
   --bg-color: var(--primary-color);
+  /* --bg-color: var(--primary-color); */
   --container-color: white;
   --text-color : #5a4e41;
 }
@@ -126,8 +127,6 @@ header {
 
     img {
       border: none;
-      border-top-left-radius: 35%;
-      border-top-right-radius: 35%;
       padding: 20px;
       padding-bottom: 0;
       width: 100%;
