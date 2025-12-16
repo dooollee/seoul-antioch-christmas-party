@@ -1,0 +1,602 @@
+@import "./font.css";
+
+:root {
+  --primary-color: #FFF6E9;
+  --bg-color: var(--primary-color);
+  /* --bg-color: var(--primary-color); */
+  --container-color: white;
+  --text-color : #5a4e41;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "GoWunBatang-Regular";
+  color: var(--text-color);
+  h2 {
+    margin-block: 10px;
+    font-style: italic;
+    font-size: 15px;
+    font-weight: 300;
+    color: burlywood;
+  }
+}
+
+
+
+body {
+  background-color: var(--bg-color);
+  text-align: center;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .show {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.container {
+  background-color: var(--container-color);
+  width: 100%;
+  min-width: 300px;
+  max-width: 400px;
+  border-radius: 3px;
+  margin-inline: auto;
+  box-shadow: 0rem 0rem 0.8rem black;
+}
+
+.music-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.music-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.05);
+}
+
+.music-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* 음악 재생/일시정지 아이콘 스타일 */
+.play-icon,
+.pause-icon {
+  display: none;
+}
+
+.play-icon.active,
+.pause-icon.active {
+  display: block;
+}
+
+header {
+  .card {
+    padding-bottom: 40px;
+    background: var(--bg-color);
+
+    .wedding-day {
+      font-family: "GoldenPlains";
+      letter-spacing: 1px;
+      line-height: 150%;
+      display: inline-block;
+      position: absolute;
+      inset: 25px 0;
+      font-size: 30px;
+      /* color: #f1f7e8; */
+      color: #ecd1b5;
+      text-shadow: 3px 3px 3px var(--text-color);
+    }
+
+    .intro {
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 20px;
+      text-shadow: 1px 1px 3px gray;
+      font-size: 12px;
+    }
+
+    img {
+      border: none;
+      padding: 20px;
+      padding-bottom: 0;
+      width: 100%;
+    }
+
+    .guide {
+      margin-top: 15px;
+      letter-spacing: 0.06rem;
+      text-shadow: 1px 1px 3px gray;
+      /* background: linear-gradient(to right, black, gray, white);
+      color: transparent;
+      -webkit-background-clip: text; */
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 800px;
+    padding: 100px 0;
+    gap: 50px;
+    font-size: 14px;
+    line-height: 1.8rem;
+
+    .word {
+      font-weight: 600;
+    }
+
+    p {
+      margin-block: 5px;
+    }
+
+    .call {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-block: 10px;
+      gap: 10px;
+    }
+
+    a {
+      display: inline-flex;
+      vertical-align: text-top;
+    }
+    img {
+      vertical-align: text-top;
+    }
+
+    .host {
+      letter-spacing: 0.1rem;
+      line-height: 0.1rem;
+    }
+  }
+}
+
+main {
+  padding: 40px 0;
+
+  .mainOne {
+    padding: 40px 0;
+
+    .title {
+      margin-block: 30px;
+    }
+
+    .calender {
+      font-size: 0.875rem;
+      padding: 2rem;
+      margin-block: 30px;
+
+      .days {
+        gap: 0.625rem;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        margin-bottom: 0.625rem;
+      }
+
+      .dates {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0.625rem;
+      }
+
+      .date {
+        padding: 0.5rem 0.25rem;
+      }
+
+      .holiday {
+        color: red;
+      }
+
+      .dDay {
+        background-color: var(--bg-color);
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .countdown-container {
+    margin: 30px auto;
+    background-color: white;
+    padding: 0.625rem;
+    text-align: center;
+
+    #countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      font-size: 1.25rem;
+      font-weight: lighter;
+      color: #333;
+    }
+  }
+
+  .mainTwo {
+    .flower {
+      width: 15%;
+    }
+
+    .gallery-container {
+      padding: 20px;
+    }
+
+    /* 갤러리 네비게이션 */
+    .gallery-nav {
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .nav-btn {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: #f0f0f0;
+    }
+
+    #page-indicator {
+      margin: 0 15px;
+      font-size: 16px;
+    }
+
+    /* 갤러리 그리드 */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 15px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      aspect-ratio: 1 / 1;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 모달 창 스타일 */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      position: relative;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      font-size: 28px;
+
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      width: 40px;
+      aspect-ratio: 1/1;
+      color: black;
+      cursor: pointer;
+      z-index: 110;
+    }
+
+    .modal-image-container {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #modal-image {
+      max-width: 400px;
+      /* max-height: 90%; */
+      object-fit: contain;
+    }
+
+    .modal-nav {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: black;
+      font-size: 24px;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 50px;
+      aspect-ratio: 1/1;
+      transition: background-color 0.3s;
+    }
+
+    .prev-btn {
+      left: 20px;
+    }
+
+    .next-btn {
+      right: 20px;
+    }
+
+    .modal-nav:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .modal-counter {
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 16px;
+    }
+  }
+
+  .counter {
+    position: absolute;
+    bottom: 0.625rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.125rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.3125rem 0.9375rem;
+    border-radius: 0.3125rem;
+  }
+
+  .worship-info {
+    margin: 30px 10px;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+
+    p {
+      margin-block: 30px;
+    }
+
+    a {
+      border: none;
+      border-radius: 3px;
+      background-color: var(--primary-color);
+      padding: 8px;
+      font-size: 12px;
+    }
+  }
+
+  .account {
+    margin: 30px 10px;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    max-width: 500px;
+
+    img {
+      display: inline;
+      vertical-align: text-top;
+    }
+  }
+
+  .toggle-btn {
+    background-color: var(--primary-color); /* 베이지 버튼 색상 */
+    color: #5a4e41;
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5px;
+    position: relative;
+  }
+
+  .account-details {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.7s ease; /* 더 느리게 설정 */
+    background-color: transparent;
+    margin-bottom: 15px;
+  }
+
+  .account-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.7s ease; /* 더 느리게 설정 */
+    font-size: 12px;
+  }
+
+  .account-item.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .account-info {
+    flex-grow: 1;
+    color: #5a4e41;
+    text-align: left;
+  }
+
+  .copy-btn {
+    background-color: var(--primary-color);
+    color: #5a4e41;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .copy-btn:hover {
+    background-color: var(--bg-color);
+  }
+
+  .copy-btn:active {
+    transform: scale(0.95);
+  }
+
+  h2.show {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 0;
+  }
+
+  p {
+    text-align: center;
+    margin: 30px 0;
+    color: #5a4e41;
+  }
+
+  .rotate-icon {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.5s ease;
+    font-weight: bold;
+    color: #5a4e41;
+  }
+
+  .rotate-icon.open {
+    transform: rotate(180deg);
+  }
+
+  strong {
+    font-weight: 600;
+    color: #5a4e41;
+  }
+}
+
+.map {
+  align-items: center;
+
+  .map-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--primary-color);
+  }
+
+  .map-link {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+
+    &::before {
+      margin-right: 5px;
+      content: ""; /* 가상 요소를 생성 */
+      display: inline-block; /* 크기 조절을 위해 block 또는 inline-block 사용 */
+      width: 20px; /* 원하는 가로 크기 */
+      aspect-ratio: 1/1; /* 원하는 세로 크기 */
+      background-size: contain; /* 요소 안에서 비율 유지하며 맞춤 */
+      background-repeat: no-repeat; /* 이미지 반복 방지 */
+      background-position: center; /* 이미지를 가운데 정렬 */
+    }
+
+    &.Tmap::before {
+      background-image: url("../src/map_Icon/Tmap.png"); /* PNG 이미지 삽입 */
+    }
+    &.kakao::before {
+      background-image: url("../src/map_Icon/kakaomap_icon.svg"); /* PNG 이미지 삽입 */
+    }
+    &.naver::before {
+      background-image: url("../src/map_Icon/navermap_icon.svg"); /* PNG 이미지 삽입 */
+    }
+  }
+
+  .wrap_controllers {
+    display: none;
+  }
+
+  .map-from-internet {
+    margin-block: 0.9375rem;
+  }
+
+  .howToCome {
+    padding: 20px;
+    font-size: 14px;
+    line-height: 160%;
+
+    strong{
+      font-size: inherit;
+    }
+    h4{
+      margin: 10px;
+    }
+    img{
+      width: 14px;
+    }
+
+    p{
+      margin-block: 20px;
+      }
+    }
+  }
+
+.copy-right {
+  margin-top: 100px;
+  height: 200px;
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎄 Welcome to Antioch Christmas Party 🎄</title>
+    <!-- <link rel="shortcut icon" href="./src/favicon/icons8-혼례-48.png" /> -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="reload" href="./css/style.css" />
+
+    <meta property="og:image" content="/src/photo/seoul.jpg" />
+    <meta
+      property="og:title"
+      content="크리스마스 파티 초청장"
+    />
+    <meta
+      property="og:description"
+      content="25.12.27 4:30 pm"
+    />
+    <script src="./js/countDown.js"></script>
+    <script src="./js/show.js"></script>
+    <script src="./js/account.js"></script>
+    <script src="./js/music.js"></script>
+    <script src="./js/img.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 배경음악 제어 버튼 -->
+      <button class="music-button" id="musicToggle">
+        <svg class="music-icon play-icon active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+        <svg class="music-icon pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+        </svg>
+      </button>
+      
+      <!-- 배경음악 -->
+      <audio id="bgMusic" loop>
+        <!-- 음악 파일 경로를 여기에 추가하세요 -->
+        <source src="./src/music/To love you - His will.mp3" type="audio/mpeg">
+        브라우저가 오디오 요소를 지원하지 않습니다.
+      </audio>
+      <header>
+        <section class="card">
+          <!-- <div class="wedding-day">
+            <h1>Welcome to Antioch <br> Christ Mas Party</h1>
+          </div> -->
+          <img src="./src/photo/seoul.jpg" alt="메인 이미지" />
+         
+        </section>
+        <section class="text">
+          <h2 class="show">Invite</h2>
+          <div class="word show">
+            <p>
+              아들을 낳으리니 이름을 예수라 하라 
+              <br>
+              이는 그가 자기 백성을 저희 죄에서 구원할 자이심이라 하니라
+              <br>
+              마태복음 1:21
+          </p>
+          </div>
+
+          <div class=" show">
+            <p>
+              환영합니다.
+              초청 맨트를 뭐라고 하는게 좋을까?
+            <p>
+            
+          </div>
+        </section>
+      </header>
+      <main>
+        <section class="mainOne">
+          <h2 class="show">Calender</h2>
+          <div class="title show">
+            December
+          </div>
+          <hr />
+          <div class="calender show">
+            <div class="days">
+              <div class="day holiday">일</div>
+              <div class="day">월</div>
+              <div class="day">화</div>
+              <div class="day">수</div>
+              <div class="day">목</div>
+              <div class="day">금</div>
+              <div class="day">토</div>
+            </div>
+            <div class="dates">
+              <div class="date"></div>
+              <div class="date">1</div>
+              <div class="date">2</div>
+              <div class="date">3</div>
+              <div class="date">4</div>
+              <div class="date">5</div>
+              <div class="date">6</div>
+              <div class="date holiday">7</div>
+              <div class="date">8</div>
+              <div class="date">9</div>
+              <div class="date">10</div>
+              <div class="date">11</div>
+              <div class="date">12</div>
+              <div class="date">13</div>
+              <div class="date holiday">14</div>
+              <div class="date">15</div>
+              <div class="date">16</div>
+              <div class="date">17</div>
+              <div class="date">18</div>
+              <div class="date">19</div>
+              <div class="date">20</div>
+              <div class="date holiday">21</div>
+              <div class="date">22</div>
+              <div class="date">23</div>
+              <div class="date">24</div>
+              <div class="date">25</div>
+              <div class="date">26</div>
+              <div class="date dDay">27</div>
+              <div class="date holiday">28</div>
+              <div class="date">29</div>
+              <div class="date">30</div>
+              <div class="date">31</div>
+            </div>
+          </div>
+          <hr />
+        </section>
+        <section class="mainTwo">
+        
+          <!-- 모달 창 (사진 확대 보기) -->
+          <div id="photo-modal" class="modal">
+              <div class="modal-content">
+                  <span class="close-btn">&times;</span>
+                  
+                  <div class="modal-image-container">
+                      <button class="modal-nav prev-btn">&lt;</button>
+                      <img id="modal-image" src="" alt="확대 이미지">
+                      <button class="modal-nav next-btn">&gt;</button>
+                  </div>
+                  
+                  <div class="modal-counter">
+                      <span id="current-image">1</span> / <span id="total-images">22</span>
+                  </div>
+              </div>
+          </div>
+        
+          <!-- 예배 안내  -->
+          <h2 class="show">Information</h2>
+          <div class="worship-info show">
+            <p>일정표</p>
+            
+            <p>
+              아마 이 부분에 일정표 삽입
+            </p>
+           </div>
+
+        </section>
+      </main>
+      <footer>
+        <article class="map">
+          <h2 class="show">Location</h2>
+          <p class="show">서울 강동구 천중로44길 28</p>
+          <div class="map-from-internet show">
+            <!-- * 카카오맵 - 지도퍼가기 -->
+            <!-- 1. 지도 노드 -->
+            <div id="daumRoughmapContainer1740811753772" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+  
+            <!--
+  	        2. 설치 스크립트
+  	        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+            -->
+            <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+  
+            <!-- 3. 실행 스크립트 -->
+            <script charset="UTF-8">
+            	new daum.roughmap.Lander({
+            		"timestamp" : "1740811753772",
+            		"key" : "2n7p3",
+            		"mapWidth" : "360",
+            		"mapHeight" : "360"
+            	}).render();
+            </script>
+          </div>
+        <ul class="map-links show">
+          <li><a class="map-link kakao" href="https://kko.kakao.com/3UScMaMeEV" target="_blank">카카오 맵</a></li>
+          <li><a class="map-link naver" href="https://naver.me/FgHh36H4" target="_blank">네이버 지도</a></li>
+          <li><a class="map-link Tmap" href="https://tmap.life/10956a3a" target="_blank">T-map</a></li>
+        </ul>
+        <div class="show howToCome">
+          <h2>오시는 길</h2>
+          <p>
+            <h4>&lt;대중교통&gt;</h4>
+            <img src="/src/icon/bus.png" alt="" />
+            <strong>버스</strong> 3413, 3212, 2312, 130<br>
+            <img src="/src/icon/subway.png" alt="" />
+            <strong>지하철</strong> 길동역 1번출구 250m<br>
+          </p>
+        </div>
+        </article>
+        <div class="copy-right show">
+          <small>Copyright &copy 2025. fmvyouth. All rights reserved.</small>
+        </div>
+      </footer>
+    </div>
+
+  </body>
+</html>
